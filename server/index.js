@@ -35,7 +35,7 @@ app.post("/users", async (req, res) => {
 
 app.get("/:userName/:partnerName", async (req, res) => {
   try {
-    const message = {userName: req.params.userName, partnerName: req.params.partnerName};
+    const message = {userName: +req.params.userName, partnerName: +req.params.partnerName};
     console.log('message', message);
     const messages = await userService.getMessages(message);
     console.log(messages);
